@@ -17,22 +17,29 @@
 
 ## 🚀 快速开始
 
-### 1. 编译项目
+### Linux/macOS:
 ```bash
 # 进入项目目录
 cd graph
 
 # 编译项目
 make all
+
+# 运行程序
+./bin/pathfinding
 ```
 
-### 2. 运行程序
-```bash
-# 方式1：直接运行
-./bin/pathfinding
+### Windows (不使用make):
+```batch
+# 方式1：一键编译运行（推荐）
+双击 run.bat
 
-# 方式2：使用make运行
-make run
+# 方式2：先编译后运行
+双击 compile.bat  (编译)
+双击 run.bat     (运行)
+
+# 方式3：命令行操作
+compile.bat && run.bat
 ```
 
 ## 🔨 编译运行
@@ -183,6 +190,8 @@ make all
 ```
 
 ### 运行问题
+
+#### Linux/macOS:
 ```bash
 # 如果提示权限不足
 chmod +x bin/pathfinding
@@ -191,12 +200,47 @@ chmod +x bin/pathfinding
 ls -la bin/
 ```
 
+#### Windows问题:
+
+**🚨 Visual Studio弹窗问题**:
+- **原因**: 直接双击了 .exe 文件
+- **解决**: 使用 run.bat 启动，不要直接双击 .exe
+- **正确操作**: 双击 `run.bat`，不是 `pathfinding.exe`
+
+**💡 其他Windows问题**:
+```batch
+# 如果提示找不到GCC
+# 安装 MinGW-w64 或 Code::Blocks
+
+# 如果编译失败
+# 检查是否在正确目录
+dir
+
+# 如果程序无法启动
+# 确保使用 run.bat 而不是直接运行exe
+```
+
 ### 中文显示问题
+
+#### Linux/macOS:
 ```bash
 # 设置终端编码为UTF-8
 export LANG=zh_CN.UTF-8
 export LC_ALL=zh_CN.UTF-8
 ```
+
+#### Windows控制台乱码:
+**✅ 解决方案**: 使用我们提供的批处理文件！
+```batch
+# 直接双击这些文件，已自动设置编码
+run.bat      # 自动处理中文显示
+compile.bat  # 编译时也处理编码
+```
+
+#### 如果仍有问题:
+1. **避免直接双击 .exe 文件**
+2. **使用 run.bat 启动程序**
+3. **确保终端字体支持中文**（如"Microsoft YaHei"）
 
 ## 🎯 快速测试脚本
 
