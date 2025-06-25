@@ -104,19 +104,19 @@ void* safeRealloc(void* ptr, size_t size) {
 // 错误处理
 const char* getErrorMessage(ErrorCode error) {
     switch (error) {
-        case ERROR_NONE:
+        case ERR_NONE:
             return "无错误";
-        case ERROR_INVALID_INPUT:
+        case ERR_INVALID_INPUT:
             return "无效输入";
-        case ERROR_NODE_NOT_FOUND:
+        case ERR_NODE_NOT_FOUND:
             return "节点未找到";
-        case ERROR_EDGE_NOT_FOUND:
+        case ERR_EDGE_NOT_FOUND:
             return "边未找到";
-        case ERROR_MEMORY_ALLOCATION:
+        case ERR_MEMORY_ALLOCATION:
             return "内存分配失败";
-        case ERROR_GRAPH_FULL:
+        case ERR_GRAPH_FULL:
             return "图已满";
-        case ERROR_PATH_NOT_FOUND:
+        case ERR_PATH_NOT_FOUND:
             return "路径未找到";
         default:
             return "未知错误";

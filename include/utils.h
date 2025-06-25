@@ -28,13 +28,13 @@ void* safeRealloc(void* ptr, size_t size);
 
 // 错误处理
 typedef enum {
-    ERROR_NONE = 0,
-    ERROR_INVALID_INPUT,
-    ERROR_NODE_NOT_FOUND,
-    ERROR_EDGE_NOT_FOUND,
-    ERROR_MEMORY_ALLOCATION,
-    ERROR_GRAPH_FULL,
-    ERROR_PATH_NOT_FOUND
+    ERR_NONE = 0,
+    ERR_INVALID_INPUT,
+    ERR_NODE_NOT_FOUND,
+    ERR_EDGE_NOT_FOUND,
+    ERR_MEMORY_ALLOCATION,
+    ERR_GRAPH_FULL,
+    ERR_PATH_NOT_FOUND
 } ErrorCode;
 
 const char* getErrorMessage(ErrorCode error);
