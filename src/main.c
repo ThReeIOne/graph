@@ -1,6 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#ifdef _WIN32
+#include <windows.h>
+#include <locale.h>
+#endif
 #include "../include/graph.h"
 #include "../include/pathfinding.h"
 #include "../include/utils.h"
@@ -16,6 +20,12 @@ void handleToggleObstacle(Graph* graph);
 void handleShowGraph(Graph* graph);
 
 int main() {
+#ifdef _WIN32
+    // 设置控制台输出编码为UTF-8
+    SetConsoleOutputCP(65001);
+    SetConsoleCP(65001);
+    setlocale(LC_ALL, "");
+#endif
     printf("==================================\n");
     printf("     基于图的路径规划系统\n");
     printf("==================================\n\n");

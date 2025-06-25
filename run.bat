@@ -8,7 +8,7 @@ echo ================================
 echo.
 
 REM 检查可执行文件是否存在
-if not exist bin\pathfinding.exe (
+if not exist PathFinding.exe (
     echo [提示] 未找到可执行文件，正在尝试编译...
     echo.
     call compile.bat
@@ -25,7 +25,7 @@ echo 正在启动路径规划系统...
 echo ================================
 echo.
 
-bin\pathfinding.exe
+PathFinding.exe
 
 echo.
 echo ================================
