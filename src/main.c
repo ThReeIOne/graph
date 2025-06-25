@@ -1,9 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#ifdef _WIN32
-#include <windows.h>
-#endif
 #include "../include/graph.h"
 #include "../include/pathfinding.h"
 #include "../include/utils.h"
@@ -21,8 +18,7 @@ void handleShowGraph(Graph* graph);
 int main() {
 #ifdef _WIN32
     // 设置控制台为UTF-8编码
-    SetConsoleOutputCP(65001);
-    SetConsoleCP(65001);
+    system("chcp 65001 >nul");
 #endif
     printf("==================================\n");
     printf("     基于图的路径规划系统\n");
