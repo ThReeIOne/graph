@@ -65,15 +65,6 @@ make help
 make clean && make all
 ```
 
-### 验证编译
-```bash
-# 检查可执行文件
-ls -la bin/pathfinding
-
-# 检查文件类型
-file bin/pathfinding
-```
-
 ## 🧪 功能测试
 
 ### 主菜单功能
@@ -282,7 +273,7 @@ EOF
 - **体育馆**
 - **实验楼**
 
-## 📚 进阶测试
+## 📚 临界点测试
 
 ### 性能测试
 1. 添加多个节点和边
