@@ -224,7 +224,7 @@ void handleAddEdge(Graph* graph) {
 
 void handleFindPath(Graph* graph) {
     char startName[MAX_NAME_LEN], endName[MAX_NAME_LEN];
-    int mode;
+    int mode, algorithm;
     
     printf("\n=== 查找路径 ===\n");
     printf("输入起点名称: ");
@@ -246,7 +246,26 @@ void handleFindPath(Graph* graph) {
         return;
     }
     
-    PathResult* result = findPathByName(graph, startName, endName, (TransportMode)mode);
+    printf("选择路径查找算法:\n");
+    printf("0 - Dijkstra算法 (传统最短路径)\n");
+    printf("1 - A*算法 (启发式搜索，通常更快)\n");
+    printf("请选择 (0-1): ");
+    scanf("%d", &algorithm);
+    getchar(); // 消费换行符
+    
+    if (algorithm < 0 || algorithm > 1) {
+        printf("无效的算法选择！\n");
+        return;
+    }
+    
+    PathResult* result;
+    printf("\n正在使用%s算法搜索路径...\n", algorithm == 0 ? "Dijkstra" : "A*");
+    
+    if (algorithm == 0) {
+        result = findPathByName(graph, startName, endName, (TransportMode)mode);
+    } else {
+        result = findPathByNameAStar(graph, startName, endName, (TransportMode)mode);
+    }
     
     if (result && result->isValid) {
         printPath(graph, result);
